@@ -2,7 +2,7 @@
 """
 Created on Fri Nov 30 00:13:19 2018
 
-@author: berkay
+@author: mdinski
 """
 import openpyxl
 
