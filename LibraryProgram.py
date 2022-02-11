@@ -48,9 +48,9 @@ while True:
         print("\n***Du hast falsch eingegeben. Versuch es noch einmal.***\n")
     else : 
            if int(islem_giris) == 1 :
-                  üye_isim=input("Üye İsmini Giriniz : ")
-                  üye_soyisim=input("Üye Soyismini Giriniz :  ")
-                  üye_no=input("Üye Numarası Veriniz : ")
+                  üye_isim=input("Vorname des Mitgliedes : ")
+                  üye_soyisim=input("Nachname des Mitgliedes :  ")
+                  üye_no=input("Manuelle Mitgliednummer : ")
        
                   kitap=openpyxl.load_workbook("üyeler.xlsx")
                   sayfa=kitap.get_sheet_by_name("Üyeler")
@@ -63,7 +63,7 @@ while True:
                                 sayfa.cell(row=k,column=3,value=üye_soyisim)
                                 kitap.save("üyeler.xlsx")
                                 kitap.close()
-                                print ("\nÜye Başarıyla EKLENDİ!\n")
+                                print ("\nMitglied erfolgreich hinzugefügt!\n")
                                 break
                          else:
                                 k+=1
@@ -72,7 +72,7 @@ while True:
                   
                       
            elif int(islem_giris) == 2 : 
-                 ck_üyeno=input("Çıkarılacak Üye Numarasını Giriniz : ")
+                 ck_üyeno=input("Mitgliednummer zum Löschen vom System : ")
                  kitap=openpyxl.load_workbook("üyeler.xlsx")
                  sayfa=kitap.get_sheet_by_name("Üyeler")
                  i=1
@@ -84,7 +84,7 @@ while True:
                                sayfa.cell(row=i,column=3,value="")
                                kitap.save("üyeler.xlsx")
                                kitap.close()
-                               print("\nÜye Başarıyla SİLİNDİ!\n")
+                               print("\nerflogreich gelöscht!\n")
                                break
                        
                         else:
@@ -92,8 +92,8 @@ while True:
                                                      
                         
            elif int(islem_giris) == 3 :
-                  ek_kitap=input("Eklenecek Kitabın Adını Giriniz : ")
-                  ek_serino=input("Eklenecek Kitabın Seri Numarasını Giriniz : ")
+                  ek_kitap=input("Buchname zum Addieren : ")
+                  ek_serino=input("Serialnummer vom Buch : ")
                   kitap=openpyxl.load_workbook("kitaplar.xlsx")
                   sayfa=kitap.get_sheet_by_name("Kitaplar")
                   e=1
@@ -104,7 +104,7 @@ while True:
                                 sayfa.cell(row=e,column=2,value=ek_serino)
                                 kitap.save("kitaplar.xlsx")
                                 kitap.close()
-                                print("\nKitap Başarıyla EKLENDİ!\n")
+                                print("\nBuch erfolgreich hinzugefügt!\n")
                                 break
                          else :
                                e=e+1
@@ -112,7 +112,7 @@ while True:
                                
                                
            elif int(islem_giris) == 4 :
-                  ck_kitap=input("Çıkarılacak kitabın Seri Numarasını Giriniz : ")
+                  ck_kitap=input("Mitgliednummer zum Löschen vom System : ")
                   kitap=openpyxl.load_workbook("kitaplar.xlsx")
                   sayfa=kitap.get_sheet_by_name("Kitaplar")
                   z=1
@@ -124,13 +124,13 @@ while True:
                                 
                                 kitap.save("kitaplar.xlsx")
                                 kitap.close()
-                                print("\n Kitap Başarıyla SİLİNDİ!\n")
+                                print("\n Buch erfolgreich gelöscht!\n")
                                 break
                          else :
                                 z=z+1
            elif int(islem_giris) == 5 :
-                  ktp_üye=input("Kitap Alacak Üyenin Numarasını Giriniz : ")
-                  vrln_ktp=input("Üyeye Verilen Kitabın Seri Numarasını Giriniz : ")
+                  ktp_üye=input("Mitgliednummer zum Bucheinnehmen : ")
+                  vrln_ktp=input("Serialnummer vom eingegebenen Buch: ")
                   kitap=openpyxl.load_workbook("kitapalan.xlsx")
                   sayfa=kitap.get_sheet_by_name("kitapalan")
                   f=1
@@ -141,7 +141,7 @@ while True:
                                 sayfa.cell(row=f,column=2,value=vrln_ktp)
                                 kitap.save("kitapalan.xlsx")
                                 kitap.close()
-                                print("\nÜyeye Kitap Başarıyla VERİLDİ!\n")
+                                print("\nBuch erfolgreich engegeben!\n")
                                 break
                          else :
                                 f=f+1
